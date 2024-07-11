@@ -11,10 +11,6 @@ Options:
     -i/--in-place   Save output to input.xml (output.xml is ignored)
 ```
 
-### Usage: `./main.exe <input_xml_path>`
-
-
-
 ## Csc Feature Tweaks
 
 > Origin repo: ravindu644/Samsung_Additional_Features
