@@ -1,7 +1,9 @@
 # OMCDecoder
+
 Samsung OMC Decoder implementation in C++ from CSC apk.
 
 # Usage
+
 ```
 cscdecoder [options] input.xml output.xml
 
@@ -41,32 +43,13 @@ Options:
 <CscFeature_Framework_SupportDataModeSwitchGlobalAction>TRUE</CscFeature_Framework_SupportDataModeSwitchGlobalAction>
 ```
 
-### 05. USIM info at the bottom of lock screen
-
-```
-<CscFeature_LockScreen_ConfigCarrierTextPolicy>DisplayUsimText;DisplayPlmnOnBottom</CscFeature_LockScreen_ConfigCarrierTextPolicy>
-```
-
-### 06. Useful Cards menu in Messages
+### 05. Useful Cards menu in Messages
 
 ```
 <CscFeature_Message_SupportUsefulcard>TRUE</CscFeature_Message_SupportUsefulcard>
 ```
 
-### 07. NFC Card Mode
-
-```
-<CscFeature_NFC_ConfigDynamicFirmwareLoading>KOO</CscFeature_NFC_ConfigDynamicFirmwareLoading>
-<CscFeature_NFC_ConfigReaderModeUI>KOREA</CscFeature_NFC_ConfigReaderModeUI>
-```
-
-### 08. NFC icon always in Status Bar
-
-```
-<CscFeature_SystemUI_ConfigDefIndicatorAdditionalSystemIcon>nfc</CscFeature_SystemUI_ConfigDefIndicatorAdditionalSystemIcon>
-```
-
-### 09. Change 4G icon (value can be CHC, TGY, VZW, ATT, SPR, each one has different 4G icon)
+### 06. Change 4G icon (value can be CHC, TGY, VZW, ATT, SPR, each one has different 4G icon)
 
 ```
 <CscFeature_SystemUI_ConfigOpBrandingForIndicatorIcon>CHC</CscFeature_SystemUI_ConfigOpBrandingForIndicatorIcon>
@@ -74,46 +57,38 @@ Options:
 
 <hr> - Special Thanks : <a href="https://t.me/Hiruka_NU">@Hiruka_NU</a> | <a href="https://xdaforums.com/t/csc-feature-mods.4538389/"> This post on XDA </a> | <a href="https://t.me/User7884or7885">@User7884or7885</a><br><hr>
 
-
-
-### 01. 5 bar signal (Useless for some regions)
-
-```
-<CscFeature_SystemUI_ConfigMaxRssiLevel>5</CscFeature_SystemUI_ConfigMaxRssiLevel>
-```
-
-### 02. Play songs while recording a video.
+### 07. Play songs while recording a video.
 
 ```
 <CscFeature_Camera_CamcorderDoNotPauseMusic>TRUE</CscFeature_Camera_CamcorderDoNotPauseMusic>
 ```
 
-### 03. Camera Tweaks
+### 08. Camera Tweaks
 
 ```
 <CscFeature_Camera_CameraFlicker>60hz</CscFeature_Camera_CameraFlicker>
 <CscFeature_Camera_DefaultQuality>superfine</CscFeature_Camera_DefaultQuality>
 ```
 
-### 04. Confirmation popup after tapping the quick tooggle for mobile data
+### 09. Confirmation popup after tapping the quick tooggle for mobile data
 
 ```
 <CscFeature_Setting_EnablePromptPopupWhenActivatingDataConnection>TRUE</CscFeature_Setting_EnablePromptPopupWhenActivatingDataConnection>
 ```
 
-### 05. Data icon style(LTE)
+### 10. Data icon style(LTE)
 
 ```
 <CscFeature_SystemUI_ConfigOverrideDataIcon>LTE</CscFeature_SystemUI_ConfigOverrideDataIcon>
 ```
 
-### 06. Data usage in quick panel(Need China smart manager)
+### 11. Data usage in quick panel(Need China smart manager)
 
 ```
 <CscFeature_SystemUI_SupportDataUsageViewOnQuickPanel>TRUE</CscFeature_SystemUI_SupportDataUsageViewOnQuickPanel>
 ```
 
-### 07. Network speed meter
+### 12. Network speed meter
 
 ```
 <CscFeature_Setting_SupportRealTimeNetworkSpeed>TRUE</CscFeature_Setting_SupportRealTimeNetworkSpeed>
@@ -125,36 +100,16 @@ Options:
 <CscFeature_Common_SupportZProjectFunctionInGlobal>TRUE</CscFeature_Common_SupportZProjectFunctionInGlobal>
 ```
 
-### 08. Camera will works during a call
+### 13. Camera will works during a call
 
 ```
 <CscFeature_Camera_EnableCameraDuringCall>TRUE</CscFeature_Camera_EnableCameraDuringCall>
 ```
 
-### 09. VoLTE with 3G network(H/H+)
-
-```
-<CscFeature_Common_EnableHDVoiceDuring3GConnection>TRUE</CscFeature_Common_EnableHDVoiceDuring3GConnection>
-```
-
-### 10. Mobile data icon in power menu
-
-```
-<CscFeature_Framework_SupportDataModeSwitchGlobalAction>TRUE</CscFeature_Framework_SupportDataModeSwitchGlobalAction>
-```
-
-### 11. Call Recording in Samsung Dialer
+### 14. Call Recording in Samsung Dialer
 
 ```
 <CscFeature_VoiceCall_ConfigRecording>RecordingAllowedByMenu</CscFeature_VoiceCall_ConfigRecording>
-```
-
-### ¬ Alt Z Life
-
-```
-<CscFeature_Common_SupportPrivateMode>TRUE</CscFeature_Common_SupportPrivateMode>
-<CscFeature_Gallery_SupportAliveZoom>TRUE</CscFeature_Gallery_SupportAliveZoom>
-<CscFeature_Sip_ConfigAlivePrediction>multilingual</CscFeature_Sip_ConfigAlivePrediction>
 ```
 
 ### ¬ Smart Manager
@@ -246,18 +201,9 @@ Options:
 <CscFeature_Camcorder_DefaultQuality>superfine</CscFeature_Camcorder_DefaultQuality>
 ```
 
-### ¬ AOD
-
-```
-<CscFeature_AOD_ConfigAdditionalHomeDoubleKeyAction>;QuickCamera</CscFeature_AOD_ConfigAdditionalHomeDoubleKeyAction>
-```
-
 ### ¬ Common
 
 ```
-<CscFeature_Common_AutoConfigurationType>NO_DFLT_CSC, SIMBASED_OMC</CscFeature_Common_AutoConfigurationType>
-<CscFeature_Common_ConfigEmergencyModePackages>com.ipsec.service,com.sec.android.providers.iwlansettings,com.sec.android.providers.mapcon</CscFeature_Common_ConfigEmergencyModePackages>
-<CscFeature_Common_ConfigYuva>AIBokeh|powerplanning|reserve|zeroforward|mileage|dashboard|setupmygalaxystories|downloadable_spowerplanning|sprotect|downloadable_sprotect|downloadable_usbbackup|MemorySaver|MemorySaver_Refresh|MemorySaver_MOVE_CONTENT_TO_SDCARD_NOT_SUPPORTING</CscFeature_Common_ConfigYuva>
 <CscFeature_Common_DisablePhoneNumberFormatting>TRUE</CscFeature_Common_DisablePhoneNumberFormatting>
 <CscFeature_Common_EulaVersion>2</CscFeature_Common_EulaVersion>
 <CscFeature_Common_SupportRmm>TRUE</CscFeature_Common_SupportRmm>
@@ -301,16 +247,6 @@ Options:
 <CscFeature_VoiceRecorder_SupportPrivacyPolicyPrompt>TRUE</CscFeature_VoiceRecorder_SupportPrivacyPolicyPrompt>
 ```
 
-### ¬ Video
-
-```
-<CscFeature_Video_BlockNotiSoundDuringStreaming>TRUE</CscFeature_Video_BlockNotiSoundDuringStreaming>
-<CscFeature_Video_SupportPlayDuringCall>TRUE</CscFeature_Video_SupportPlayDuringCall>
-<CscFeature_Video_SupportSpeedControl>TRUE</CscFeature_Video_SupportSpeedControl>
-<CscFeature_Video_AddWidgetLayout>TRUE</CscFeature_Video_AddWidgetLayout>
-<CscFeature_Video_EnablePopupPlayer>TRUE</CscFeature_Video_EnablePopupPlayer>
-```
-
 ### ¬ Contact
 
 ```
@@ -329,12 +265,6 @@ Options:
 <CscFeature_Contact_SupportDuoVideoCall>TRUE</CscFeature_Contact_SupportDuoVideoCall>
 <CscFeature_Contact_EnableExtraCallServiceMenu>TRUE</CscFeature_Contact_EnableExtraCallServiceMenu>
 <CscFeature_Contact_EnableSelectableListToExportSdCard>TRUE</CscFeature_Contact_EnableSelectableListToExportSdCard>
-```
-
-### ¬ GMS
-
-```
-<CscFeature_GMS_SetClientIDBaseMs>android-samsung-ga-rev1</CscFeature_GMS_SetClientIDBaseMs>
 ```
 
 ### ¬ Messages
@@ -434,81 +364,19 @@ Options:
 <CscFeature_NFC_StatusBarIconType>DEFAULT</CscFeature_NFC_StatusBarIconType>
 ```
 
-### ¬ RIL
-
-```
-<CscFeature_RIL_ConfigProvideCellInfo>Enable</CscFeature_RIL_ConfigProvideCellInfo>
-<CscFeature_RIL_CallerIdMatchingDigit>TRUE</CscFeature_RIL_CallerIdMatchingDigit>
-<CscFeature_RIL_ConfigDataStatus>FALSE</CscFeature_RIL_ConfigDataStatus>
-<CscFeature_RIL_DefaultDataStateFalse>TRUE</CscFeature_RIL_DefaultDataStateFalse>
-<CscFeature_RIL_DisplayStkUssdDialog>TRUE</CscFeature_RIL_DisplayStkUssdDialog>
-<CscFeature_RIL_EnableLaunchBrowser>TRUE</CscFeature_RIL_EnableLaunchBrowser>
-<CscFeature_RIL_ForceConnectMMS>TRUE</CscFeature_RIL_ForceConnectMMS>
-<CscFeature_RIL_HandleInvalidTimezonOffset>TRUE</CscFeature_RIL_HandleInvalidTimezonOffset>
-<CscFeature_RIL_HandleUnsupportedDns64DuringDownBooster>TRUE</CscFeature_RIL_HandleUnsupportedDns64DuringDownBooster>
-<CscFeature_RIL_SupportLteRoaming>TRUE</CscFeature_RIL_SupportLteRoaming>
-<CscFeature_RIL_SupportEsim>FALSE</CscFeature_RIL_SupportEsim>
-<CscFeature_RIL_SupportMptcp>TRUE</CscFeature_RIL_SupportMptcp>
-<CscFeature_RIL_SupportVolte>TRUE</CscFeature_RIL_SupportVolte>
-<CscFeature_RIL_DefTimeZoneHandling>Enable</CscFeature_RIL_DefTimeZoneHandling>
-<CscFeature_RIL_Display4gPlusIconBandwidth>14</CscFeature_RIL_Display4gPlusIconBandwidth>
-```
-
-### ¬ Vision
-
-```
-<CscFeature_Vision_ConfigImageSearch>PTRXX</CscFeature_Vision_ConfigImageSearch>
-<CscFeature_Vision_ConfigPlace>FSRXX</CscFeature_Vision_ConfigPlace>
-<CscFeature_Vision_ConfigShopping>AMZUK</CscFeature_Vision_ConfigShopping>
-<CscFeature_Vision_ConfigTextTranslator>GGLXX</CscFeature_Vision_ConfigTextTranslator>
-<CscFeature_Vision_ConfigWine>VVNXX</CscFeature_Vision_ConfigWine>
-<CscFeature_Vision_ConfigBeauty>NLLXX</CscFeature_Vision_ConfigBeauty>
-<CscFeature_Vision_ConfigFood>NLLXX</CscFeature_Vision_ConfigFood>
-<CscFeature_Vision_ConfigImageSearch>PTRXX</CscFeature_Vision_ConfigImageSearch>
-<CscFeature_Vision_ConfigPlace>FSRXX</CscFeature_Vision_ConfigPlace>
-<CscFeature_Vision_ConfigPlaceLandmark>SFSGO</CscFeature_Vision_ConfigPlaceLandmark>
-<CscFeature_Vision_ConfigPlaceMap>GGLXX</CscFeature_Vision_ConfigPlaceMap>
-<CscFeature_Vision_ConfigPlaceWeather>TWCXX</CscFeature_Vision_ConfigPlaceWeather>
-<CscFeature_Vision_ConfigShopping>NLLXX</CscFeature_Vision_ConfigShopping>
-<CscFeature_Vision_ConfigTextExchangerate>OANXX</CscFeature_Vision_ConfigTextExchangerate>
-<CscFeature_Vision_ConfigTextTranslator>GGLXX</CscFeature_Vision_ConfigTextTranslator>
-<CscFeature_Vision_ConfigWine>NLLXX</CscFeature_Vision_ConfigWine>
-```
-
 ### ¬ Weather
+
+> CMA refers to CHN, while TWC refers to TGY
 
 ```
 <CscFeature_Weather_ConfigCpType>TWC</CscFeature_Weather_ConfigCpType>
 <CscFeature_Weather_SupportCheckingDisputeArea>TRUE</CscFeature_Weather_SupportCheckingDisputeArea>
 ```
 
-### ¬ Browser
-
-```
-<CscFeature_Web_ConfigDefaultSearchEngine>google.com</CscFeature_Web_ConfigDefaultSearchEngine>
-<CscFeature_Web_ConfigSyncSource>TRUE</CscFeature_Web_ConfigSyncSource>
-<CscFeature_Web_EnableAutoSimHomeUrlInProfile>TRUE</CscFeature_Web_EnableAutoSimHomeUrlInProfile>
-```
-
-### ¬ Dialer
-
-```
-<CscFeature_Dialer_PhonebookNdigitsMatching>TRUE</CscFeature_Dialer_PhonebookNdigitsMatching>
-```
-
 ### ¬ VoLTE
 
 ```
 <CscFeature_VoiceCall_ConfigOpStyleForMobileNetSetting>voltesettingscommon,checknonvoltesim,voltesettingOPS</CscFeature_VoiceCall_ConfigOpStyleForMobileNetSetting>
-```
-
-### ¬ Email
-
-```
-<CscFeature_Email_AlignmentForRTL>TRUE</CscFeature_Email_AlignmentForRTL>
-<CscFeature_Email_DisableFontAttributeDuringComposing>Bold, Italic</CscFeature_Email_DisableFontAttributeDuringComposing>
-<CscFeature_Email_EnableSaveAsAttachment>TRUE</CscFeature_Email_EnableSaveAsAttachment>
-<CscFeature_Email_EnableSyncAndConnect>TRUE</CscFeature_Email_EnableSyncAndConnect>
 ```
 
 ### ¬ Framework
@@ -583,29 +451,6 @@ Options:
 <CscFeature_Wifi_ConfigSnsStatus>DEFAULT_ON</CscFeature_Wifi_ConfigSnsStatus>
 <CscFeature_Wifi_ConfigSecureSvcIntegration>TencentSecurityWiFi</CscFeature_Wifi_ConfigSecureSvcIntegration>
 <CscFeature_Wifi_SupportSecureWifi>FALSE</CscFeature_Wifi_SupportSecureWifi>
-```
-
-### ¬ BikeMode
-
-```
-<CscFeature_Common_ConfigBikeMode>bikemode|rewards|globalaction</CscFeature_Common_ConfigBikeMode>
-```
-
-### ¬ VT
-
-```
-<CscFeature_VT_ConfigPrivacyPolicy>record,capture</CscFeature_VT_ConfigPrivacyPolicy>
-<CscFeature_VT_ConfigCapability>emergency,pip_peer</CscFeature_VT_ConfigCapability>
-<CscFeature_VT_SupportMerge>TRUE</CscFeature_VT_SupportMerge>
-<CscFeature_VT_SupportEmergencyCall>TRUE</CscFeature_VT_SupportEmergencyCall>
-<CscFeature_VT_SupportGroupCall>TRUE</CscFeature_VT_SupportGroupCall>
-<CscFeature_VT_SupportOutgoingImageFromGallery>TRUE</CscFeature_VT_SupportOutgoingImageFromGallery>
-```
-
-### ¬ Setup Wizard
-
-```
-<CscFeature_SetupWizard_DisablePrivacyPolicyAgreement>TRUE</CscFeature_SetupWizard_DisablePrivacyPolicyAgreement>
 ```
 
 ### ¬ Lockscreen
