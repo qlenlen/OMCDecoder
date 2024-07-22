@@ -459,3 +459,549 @@ Options:
 <CscFeature_LockScreen_ConfigCarrierSecurityPolicy>SupportSimPermanentDisable</CscFeature_LockScreen_ConfigCarrierSecurityPolicy>
 <CscFeature_LockScreen_ConfigClockDisplayPolicy>ShowRomaingTime</CscFeature_LockScreen_ConfigClockDisplayPolicy>
 ```
+
+# Build.prop Tweaks
+
+Add these lines in Build.prop, which is located in system/system. (Some probably is placebo i haven't tested all of them)
+
+### 01. Circle to search A14+
+
+```
+ro.com.google.cdb.spa1=bsxasm1
+ro.bbt.support.circle2search=true
+```
+
+> [!NOTE]  
+>
+> - These two circle to search build.prop codes aren't enough to enable circle2search, it requires framework & device support, but it's also a part of circle to search that's why it's given here.
+
+### 02. Camera Tweaks -> Improves audio and video recording quality
+
+```
+ro.media.enc.jpeg.quality=100
+ro.media.dec.jpeg.memcap=8000000
+ro.media.enc.hprof.vid.bps=8000000
+ro.media.capture.maxres=8m
+ro.media.panorama.defres=3264×1840
+ro.media.panorama.frameres=1280×720
+ro.camcorder.videoModes=true
+ro.media.enc.hprof.vid.fps=65
+ro.camera.enableCamera1MaxZsl=1
+camera.disable_zsl_mode=1
+```
+
+### 03. Better display quality, lower performance.
+
+```
+persist.sys.use_dithering=1
+```
+
+### 04. Faster streaming videos
+
+```media.stagefright.enable-player=true
+media.stagefright.enable-meta=true
+media.stagefright.enable-scan=true
+media.stagefright.enable-http=true
+media.stagefright.enable-rtsp=true
+media.stagefright.enable-record=false
+```
+
+### 05. Disables built in error reporting.
+
+```
+profiler.force_disable_err_rpt=1
+profiler.force_disable_ulog=1
+```
+
+### 06. Better net speeds.
+
+```
+net.tcp.buffersize.default=4096,87380,256960,4096,16384,256960
+net.tcp.buffersize.wifi=4096,87380,256960,4096,16384,256960
+net.tcp.buffersize.umts=4096,87380,256960,4096,16384,256960
+net.tcp.buffersize.gprs=4096,87380,256960,4096,16384,256960
+net.tcp.buffersize.edge=4096,87380,256960,4096,16384,256960
+```
+
+### 07. Disables logcat
+
+```
+logcat.live=disable
+```
+
+### 08. Phone rings immediately.
+
+```
+ro.telephony.call_ring.delay=0
+ring.delay=0
+```
+
+### 09. Better call voice quality.
+
+```
+ro.ril.enable.amr.wideband=1
+```
+
+### 10. Better signal.
+
+```
+persist.cust.tel.eons=1
+ro.config.hw_fast_dormancy=1
+```
+
+### 11. Disable notification while adb is active
+
+```
+persist.adb.notify=0
+```
+
+### 12. General Performance
+
+```
+debug.sf.hw=1
+persist.sys.ui.hw=1
+```
+
+### 13. Saves power
+
+```
+ro.ril.disable.power.collapse=1
+pm.sleep_mode=1
+windowsmgr.max_events_per_sec=60
+wifi.supplicant_scan_interval=180
+```
+
+### 14. Faster boot time
+
+```
+persist.sys.shutdown.mode=hibernate
+ro.config.hw_quickpoweron=true
+```
+
+### 15. Better Responsiveness & Speed 
+
+```
+windowsmgr.max_events_per_sec=300
+ro.max.fling_velocity=15000 
+ro.min.fling_velocity=8000 
+ro.min_pointer_dur=8
+touch.pressure.scale=0.1
+```
+
+### 16. Video Acceleration Enabled And HW debugging (Will improve performance)
+
+```
+debug.hwui.renderer=skiagl
+video.accelerate.hw=1
+debug.sf.hw=1
+debug.performance.tuning=1
+debug.egl.hw=1
+debug.composition.type=gpu
+```
+
+### 17. Disable Knox (try at your own risk!)
+
+```
+ro.config.knox=0
+ro.config.iccc_version=0
+ro.config.knox.ucm=0
+```
+
+Credit: <a href="https://xdaforums.com/t/tweaks-guide-build-prop-tweaks.3376962/">@XDA
+</a> | [This post](https://xdaforums.com/t/tweaks-for-the-build-prop.3456214/) <hr>
+
+### 18. Enable Zygote preforking
+
+```
+persist.device_config.runtime_native.usap_pool_enabled=true
+```
+
+### ¬ Enable Multi User
+
+```
+fw.max_users=5
+fw.show_multiuserui=1
+fw.showhiddenusers=1 
+fw.poweruserswitcher=1
+```
+
+### 19. Enable Google Assistant
+
+```
+ro.opa.eligible_device=true
+```
+
+> [!NOTE]  
+>
+> - This code will enable Google Assistant 2.0 the new one for all devices, requires Google Assistant supported Google version.
+
+### ¬ SafetyNET Fix
+
+```
+ro.knox.enhance.zygote.aslr=1
+```
+
+### 20.  Enable Multi Sim
+
+```
+ro.multisim.simslotcount=2
+```
+
+### 21.  Disable Knox
+
+```
+ro.securestorage.knox=false
+```
+
+### 22.  RMM Fix
+
+```
+ro.security.vaultkeeper.native=0
+```
+
+### 23.  Disable Locating
+
+```
+ro.com.google.locationfeatures=0
+ro.com.google.networklocation=0
+```
+
+### 24. Enable Secure Storage
+
+```
+ro.securestorage.support=false
+```
+
+### 25.  ADB Fix
+
+```
+persist.adb.notify=0
+persist.service.adb.enable=1
+persist.sys.usb.config=mtp,adb
+persist.service.debuggable=1
+```
+
+### 26. Enable Fast Dormancy
+
+```
+ro.fast.dormancy=1
+ro.config.hw_fast_dormancy=1
+ro.ril.fast.dormancy.rule=1
+ro.semc.enable.fast_dormancy=true
+```
+
+### 27. Force GPU Rendering on 2d Operations
+
+```
+debug.sf.hw=1
+debug.egl.profiler=1
+debug.egl.hw=1
+```
+
+### 28. Call Delay Fix
+
+```
+ro.telephony.call.ring.delay=0
+ring.delay=0
+```
+
+### 29. Increase Time Duration For WiFi scanning
+
+```
+wifi.supplicant_scan_interval=XXX
+```
+
+### 30. Save Battery Without Performance Drop
+
+```
+pm.sleep_mode=1
+ro.ril.disable.power.collapse=0
+wifi.supplicant_scan_interval=180
+```
+
+### 31. Fps cap remover
+
+```
+debug.gr.swapinterval=0
+ro.fps_enable=1
+ro.fps.capsmin=40fps
+ro.fps.capsmax=60fps
+cpu.fps=60
+gpu.fps=60
+```
+
+### 32. Faster Booting (Might create pressure in ram)
+
+```
+ro.config.hw_quickpoweron=true
+```
+
+### 33. Enable Vulkan
+
+```
+ro.hwui.use_vulkan=1
+```
+
+### 34. Audio Improvements
+
+```
+vendor.audio.media.stereo.control=0
+persist.audio.dualmic.config=endfire
+persist.audio.fluence.mode=endfire
+persist.audio.fluence.voicecall=true
+persist.vendor.audio.fluence.voicecomm=true
+persist.audio.fluence.voicerec=false
+persist.audio.fluence.speaker=true
+audio.deep_buffer.media=true
+vendor.voice.conc.fallbackpath=deep-buffer
+ro.media.dec.aud.mp3.enabled=1
+ro.media.enc.aud.mp3.enabled=1
+ro.media.dec.aud.flac.enabled=1
+ro.media.enc.aud.flac.enabled=1
+ro.media.dec.aud.wma.enabled=1
+ro.media.enc.aud.wma.enabled=1
+media.aac_51_output_enabled=true
+flac.sw.decoder.24bit.support=true
+persist.audio.speaker.dualmode=true
+vendor.audio.playback.mch.downsample=true
+vendor.audio.use.sw.alac.decoder=true
+vendor.audio.use.sw.ape.decoder=true
+af.fast_track_multiplier=1
+```
+
+### 35. Enable Webcam support for OneUI6.0+
+
+```
+ro.usb.uvc.enabled=true
+```
+
+> [!NOTE]  
+>
+> - Requires kernel support & plugins.
+
+### 36. Enable Angle Support OneUi6.0+
+
+```
+ro.gfx.angle.supported=true
+```
+
+### 37. Change User interface like Tablet
+
+```
+ro.build.characteristics=tablet
+```
+
+# 实现Samsung非国行固件本地化功能
+
+>  repo: nucked/Samsung-firmware-China-localization
+
+##### 加入黄页
+
+```
+<CscFeature_Contact_ConfigForYellowPage>SHOW</CscFeature_Contact_ConfigForYellowPage>
+```
+
+`priv-app/SamsungYellowPage/SamsungYellowPage.apk`
+
+##### 设置日历颜色
+
+```
+<CscFeature_Calendar_SetColorOfDays>XXXXXBR</CscFeature_Calendar_SetColorOfDays>
+```
+
+##### 启用中国假期日历
+
+```
+<CscFeature_Calendar_EnableLocalHolidayDisplay>CHINA</CscFeature_Calendar_EnableLocalHolidayDisplay>
+```
+
+##### 启用农历
+
+```
+<CscFeature_Calendar_EnableLunar>TRUE</CscFeature_Calendar_EnableLunar>
+```
+
+##### 通话中使用摄像头
+
+```
+<CscFeature_Camera_EnableCameraDuringCall>TRUE</CscFeature_Camera_EnableCameraDuringCall>
+```
+
+
+##### 启用自动排列图标：
+
+```
+<CscFeature_Launcher_SupportAutoIconAlign>TRUE</CscFeature_Launcher_SupportAutoIconAlign>
+```
+
+
+##### 启用通话录音：
+
+```
+<CscFeature_VoiceCall_ConfigRecording>RecordingAllowed</CscFeature_VoiceCall_ConfigRecording>
+```
+
+##### 天气换源：
+
+> CMA对应中国，TGY对应香港；这一条实测6.1上没有效果
+
+```
+<CscFeature_Weather_ConfigCpType>CMA</CscFeature_Weather_ConfigCpType>
+```
+
+##### 相机快门声音开关：
+
+> 同样的，6.1未生效
+
+```
+<CscFeature_Camera_ShutterSoundMenu>TRUE</CscFeature_Camera_ShutterSoundMenu>
+```
+
+
+##### SyncMl保留，其余全部删掉
+
+```
+<CscFeature_SyncML_ConfigDevicePreId>IMEI</CscFeature_SyncML_ConfigDevicePreId>
+```
+
+
+##### 运营商版本
+
+```
+<CscFeature_SystemUI_ConfigOpBranding5GIcon>5GAvailable,RRCStateCheck,UseOneShapedIcon,UseDisplayTimer</CscFeature_SystemUI_ConfigOpBranding5GIcon>
+<CscFeature_SystemUI_ConfigOpBrandingForIndicatorIcon>CHC</CscFeature_SystemUI_ConfigOpBrandingForIndicatorIcon>
+<CscFeature_SystemUI_ConfigOpBrandingForQuickSettingLabel>CHC</CscFeature_SystemUI_ConfigOpBrandingForQuickSettingLabel>
+<CscFeature_SystemUI_ConfigOpBrandingQuickSettingIcon>CHC</CscFeature_SystemUI_ConfigOpBrandingQuickSettingIcon>
+```
+
+##### Volte
+
+```
+<CscFeature_VoiceCall_ConfigOpStyleForVolte>VolteCtc,CTC_VOLTE,wait_for_volte_regi_in_airplane_mode_ctc</CscFeature_VoiceCall_ConfigOpStyleForVolte>
+```
+
+##### 加入网速显示
+
+> 可能需要国行智能管理器的支持
+
+```
+<CscFeature_Setting_SupportRealTimeNetworkSpeed>TRUE</CscFeature_Setting_SupportRealTimeNetworkSpeed>
+```
+
+##### 闹钟响起前开机
+
+```
+<CscFeature_Clock_EnableAutoPowerOnOffMenu>TRUE</CscFeature_Clock_EnableAutoPowerOnOffMenu>
+<CscFeature_Clock_ExclusiveEnablingAutoPowerSetting>TRUE</CscFeature_Clock_ExclusiveEnablingAutoPowerSetting>
+```
+
+
+##### Bixby识屏移植 via:酷安@三星忠实头号黑粉
+
+复制国行ROM
+
+```
+/system/system/priv-app/BixbyTouch
+/system/system/etc/sysconfig/bixbytouchapp.xml
+/system/system/etc/permissions/privapp-permissions-com.samsung.android.bixbytouch.xml
+```
+
+`/vendor/etc/floating_feature.xml`文件里面加入
+
+```
+<SEC_FLOATING_FEATURE_COMMON_SUPPORT_BIXBY_TOUCH>TRUE</SEC_FLOATING_FEATURE_COMMON_SUPPORT_BIXBY_TOUCH>
+```
+
+##### 加入自动开关机功能
+
+`/vendor/etc/floating_feature.xml`文件里面加入
+
+```
+<SEC_FLOATING_FEATURE_SETTINGS_SUPPORT_AUTO_POWER_ON_OFF>TRUE</SEC_FLOATING_FEATURE_SETTINGS_SUPPORT_AUTO_POWER_ON_OFF>
+```
+
+##### 加入来电归属地
+
+```
+/system/system/priv-app/PhoneNumberLocatorService/PhoneNumberLocatorService.apk
+/system/system/etc/sysconfig/phonenumberlocatorservice.xml
+/system/system/etc/permissions/privapp-permissions-com.sgmc.phonenumberlocatorservice.xml
+```
+
+###### 智慧主页
+
+```
+system/system/app/MinusOnePage
+```
+
+##### Bixby主页
+
+```
+/system/system/priv-app/BixbyHomeCN_Disable
+/system/system/etc/permissions/privapp-permissions-bixbyhomecn.xml
+```
+
+##### 加入智能管理器
+
+TGY
+
+```
+/system/priv-app/SmartManager_v5/SmartManager_v5.apk
+/system/priv-app/SmartManager_v6_DeviceSecurity/SmartManager_v6_DeviceSecurity.apk
+```
+
+CHN
+
+```
+/system/system/priv-app/SmartManager_v6_DeviceSecurity_CN
+/system/system/priv-app/SmartManagerCN
+```
+
+到相同目录
+修改`/vendor/etc/floating_feature.xml` and `/system/etc/floating_feature.xml` 
+把SMARTMANAGER_CONFIG_PACKAGE_NAME段改成
+
+```
+<SEC_FLOATING_FEATURE_SMARTMANAGER_CONFIG_PACKAGE_NAME>com.samsung.android.sm_cn</SEC_FLOATING_FEATURE_SMARTMANAGER_CONFIG_PACKAGE_NAME>
+```
+
+把SECURITY_CONFIG_DEVICEMONITOR_PACKAGE_NAME段改成
+
+```
+<SEC_FLOATING_FEATURE_SECURITY_CONFIG_DEVICEMONITOR_PACKAGE_NAME>com.samsung.android.sm.devicesecurity.tcm</SEC_FLOATING_FEATURE_SECURITY_CONFIG_DEVICEMONITOR_PACKAGE_NAME>
+```
+
+复制国行ROM  
+
+```
+/system/system/etc/permissions/privapp-permissions-com.samsung.android.sm_cn.xml
+/system/system/etc/permissions/privapp-permissions-com.samsung.android.sm.devicesecurity.tcm_v6.xml
+```
+
+
+##### 加入骚扰拦截
+
+```
+/system/system/etc/permissions/privapp-permissions-com.sec.android.app.firewall.xml
+/system/system/priv-app/Firewall
+```
+
+
+##### 加入应用程序锁定
+
+复制复制国行ROM
+
+ ```
+/system/system/priv-app/AppLock
+/system/system/etc/permissions/privapp-permissions-com.samsung.android.applock.xml
+ ```
+
+CSC增加subfeature
+
+##### 更改SPen翻译为百度翻译
+
+修改`/optics/configs/carriers/single/KOO/conf/cscfeature.xml`加入
+
+```
+<CscFeature_SPen_ConfigDefTranslatorSolution>Baidu</CscFeature_SPen_ConfigDefTranslatorSolution>
+```
